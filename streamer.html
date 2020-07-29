@@ -21,13 +21,13 @@
             return data;
         }
         const WS_URL = location.origin.replace(/^http/, 'ws');
-        const FPS = 3;
+        const FPS = 30;
         const ws = new WebSocket(WS_URL);
         ws.onopen = () => {
             console.log(`Connected to ${WS_URL}`);
             setInterval(() => {
                 ws.send(getFrame());
-            }, 1000 / FPS);
+            }, 1);
         }
     </script>
 </body>
